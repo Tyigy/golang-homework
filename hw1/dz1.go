@@ -3,11 +3,11 @@ package main
 import "fmt"
 
 func Multiply(a, b int) (int){
-	var s float64 = 0
+	var s int = 0
 	for i:=b; i>0; i--{
 		s = s + a
 	}
-	return s/100000
+	return s
 }
 
 func Fibonacci1(n int) int{
@@ -49,7 +49,7 @@ func Bubble_sort(a[] float64){
 }
 
 func main() {
-	fmt.Println(Multiply(7.98,0.0009))
+	fmt.Println(Multiply(3, 2))
 	fmt.Println(Fibonacci1(8))
 	fmt.Println(Fibonacci2(6))
 
