@@ -48,6 +48,32 @@ func Bubble_sort(a[] float64){
 	}
 }
 
+func Bubble_sort2(a[] int){
+	var buff int
+	for i:=1; i<len(a); i++{
+		for j:=0; j<len(a)-i; j++{
+			if a[j]>a[j+1]{
+				buff=a[j]
+				a[j]=a[j+1]
+				a[j+1]=buff
+			}
+		}
+	}
+}
+
+func Unique_count(b[] int) int{
+	var sum int=1
+	Bubble_sort2(b)
+	for i:=1; i<len(b); i++{
+		if b[i-1]!=b[i]{
+			sum++
+		}
+	}
+	return sum
+	
+}
+
+
 func main() {
 	fmt.Println(Multiply(3, 2))
 	fmt.Println(Fibonacci1(8))
@@ -56,4 +82,7 @@ func main() {
 	var a = [] float64 {12.9, 5.7, 5.6, 2.1, 7.9}
 	Bubble_sort(a)
 	fmt.Println(a)
+	
+	var b = [] int {1, 2, 3, 4, 1, 2, 2, 3, 2}
+	fmt.Println(Unique_count(b))
 }
